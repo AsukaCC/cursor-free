@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "cursor-free:plugin": "../../../src/plugin/sdk/plugin.ts",
+    "cursor-free:provider": "../../../src/plugin/sdk/provider.ts",
+    "cursor-free:model": "../../../src/plugin/sdk/model.ts",
+    "cursor-free:resource": "../../../src/plugin/sdk/resource.ts",
+    "cursor-free:protocol/openai-responses": "../../../src/plugin/sdk/protocol/openai_responses.ts"
+  },
+  "fmt": {
+    "lineWidth": 100,
+    "exclude": ["assets"]
+  }
+}
