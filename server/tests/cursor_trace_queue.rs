@@ -17,7 +17,7 @@ async fn trace_producers_do_not_wait_for_sqlite_and_artifacts_stay_ordered() {
     store.set_detailed_logging(true).await.unwrap();
     let traces = CursorTraceService::new(store.clone());
     let recorder = traces.recorder("trace-queue-order");
-    recorder.begin(Some("conversation-1"), "local", Some("model-1"));
+    recorder.begin(Some("conversation-1"), "local_byok", Some("model-1"));
 
     tokio::time::timeout(Duration::from_secs(2), async {
         loop {
@@ -113,7 +113,7 @@ async fn events_for_disabled_detailed_logging_are_discarded_off_path() {
     let traces = CursorTraceService::new(store.clone());
     let recorder = traces.recorder("trace-disabled");
 
-    recorder.begin(None, "local", Some("model-1"));
+    recorder.begin(None, "local_byok", Some("model-1"));
     recorder.request(
         "bidi_request",
         Bytes::from_static(b"body"),

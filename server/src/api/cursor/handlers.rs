@@ -274,7 +274,11 @@ async fn bidi_handler(
     if first_model.is_some() {
         trace.begin(
             conversation_id.as_deref(),
-            if local { "local" } else { "cursor_official" },
+            if local {
+                "local_byok"
+            } else {
+                "cursor_official"
+            },
             first_model.as_deref(),
         );
     } else {
